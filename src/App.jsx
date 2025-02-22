@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './assets/style.css';
 
-
 import logoImg from './assets/images/logonew.png';
 import wingsImg from './assets/images/AWH-wings.png';
 import page3leftImg from './assets/images/page3left.png';
@@ -12,58 +11,79 @@ import icon4 from './assets/images/icon4.png';
 import icon5 from './assets/images/icon5.png';
 import icon6 from './assets/images/icon6.png';
 import footerImg from './assets/images/image.png';
+import girlImg from './assets/images/page1bg.png';
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+  const handleHelpClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfBZtAQrTGXh57hlVIhP-wfLfKZY4WaX4LCqRie0vNlp8mHDg/viewform",
+      "_blank",
+      "noopener noreferrer"
+    );
+  };
+
+  const handleDonateClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfBZtAQrTGXh57hlVIhP-wfLfKZY4WaX4LCqRie0vNlp8mHDg/viewform",
+      "_blank",
+      "noopener noreferrer"
+    );
   };
 
   return (
     <div id="main">
-      <div id="page1">
-        <img id="logoimg" src={logoImg} alt="Logo" />
-        <div id="hidden-nav">
-          <button id="toggle-menu" onClick={toggleMenu}>...</button>
-          <div id="links-hidden" className={menuOpen ? 'show' : 'hidden'}>
-            <a href="https://g.co/kgs/juh5yDf" target="_blank" rel="noopener noreferrer">Contact Us</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdw9TPtZ4GVAThKbtRScrEdu7NfwyBP6gtl4pspZbHU1brrNQ/closedform" target="_blank" rel="noopener noreferrer">Join Us</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBZtAQrTGXh57hlVIhP-wfLfKZY4WaX4LCqRie0vNlp8mHDg/viewform" target="_blank" rel="noopener noreferrer">Support Us</a>
-            <a href="https://paltu.awhbharat.org/about-us" target="_blank" rel="noopener noreferrer">About Us</a>
+      {/* Header: Top-Left Menu and Top-Right Logo */}
+      <header className="hero-header">
+        <div className="top-left-menu">
+          <div className="menu-icon" onClick={() => setShowMenu(!showMenu)}>
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+            {showMenu && (
+              <ul className="dropdown">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#join">Join</a></li>
+              </ul>
+            )}
           </div>
-        </div>
-
-        <div id="nav">
-          <div id="logo"></div>
-          <div id="links">
-            <a href="https://paltu.awhbharat.org/about-us" target="_blank" rel="noopener noreferrer">About Us</a>
-            <a href="https://g.co/kgs/juh5yDf" target="_blank" rel="noopener noreferrer">Contact us</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdw9TPtZ4GVAThKbtRScrEdu7NfwyBP6gtl4pspZbHU1brrNQ/closedform" target="_blank" rel="noopener noreferrer">join us</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBZtAQrTGXh57hlVIhP-wfLfKZY4WaX4LCqRie0vNlp8mHDg/viewform" target="_blank" rel="noopener noreferrer">support us</a>
-          </div>
-        </div>
-        <h1>
-          दयालुः भवतु, <br /> सर्वविधाय।
-        </h1>
-        <h2>(Let's be kind, to all kinds)</h2>
-
-        <a href="#">
-          <button id="firstbut">
-            <div id="more">
-              <h3>How can you help?</h3>
-              <h4>How can you help?</h4>
-            </div>
-            <div id="firstbutfull"></div>
+          <button className="donate-button" onClick={handleDonateClick}>
+            Donate
           </button>
-        </a>
-      </div>
+        </div>
+        <div className="logo-container">
+          <img src={logoImg} alt="Animals With Humanity Logo" />
+        </div>
+      </header>
 
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>
+            It’s time we be <br />
+            KIND to all KINDS.
+          </h1>
+          <p>The world belongs to all, and it’s time we learn to co-exist!</p>
+          <button className="help-button" onClick={handleHelpClick}>
+            How can you help?
+          </button>
+        </div>
+        <div className="hero-image-container">
+          <img
+            src={girlImg}
+            alt="Girl holding a dog"
+            className="hero-image"
+          />
+        </div>
+      </section>
+
+      {/* --- Remaining Sections (unchanged) --- */}
       <div id="page2">
         <div id="blur">
           <div className="about-us-section">

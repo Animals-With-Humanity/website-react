@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +6,6 @@
   font-family: gilroy;
 }
 
-/* Removed height: 100% to allow the document to grow */
 html,
 body {
   width: 100%;
@@ -16,189 +16,151 @@ body {
   overflow-x: hidden;
 }
 
-#page1 {
-  width: 100%;
-  min-height: 100vh; /* Allows section to expand if content exceeds one viewport height */
-  position: relative;
-  padding: 20px 50px;
-  background-image: url(/images/page1.png);
-  background-size: cover;
-  background-position: top center;  /* Changed to align the image at the top */
-  background-color: #ccc; /* fallback color */
-  overflow: visible;
-}
-
-
-#nav {
-  position: sticky;
-  width: 100%;
-  height: 8.5vh;
+/* -------------------- */
+/* Top Navigation Styles */
+/* -------------------- */
+.hero-header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 110;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #03d2ff;
-  padding: 10px;
-  z-index: 99;
-  position: relative;
-  border-radius: 10px;
-  font-size: 1.3vw;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
 }
 
-#logo {
-  width: 6vw;
-  height: 7vh;
-  /* background-color: #FBF309; */
-  position: relative;
-  object-fit: cover;
-  overflow: hidden;
+.top-left-menu {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#logo img {
-  width: 100%;
-  height: 100%;
+  flex-direction: column; /* stack dots and Donate button vertically */
+  align-items: flex-start;
   position: relative;
-  object-fit: contain;
-  object-position: center;
 }
 
-#links {
-  display: flex;
-}
-
-#links a {
-  text-decoration: none;
-  color: black;
-  text-transform: uppercase;
-  padding: 5px 40px;
-  font-weight: 600;
-}
-
-#links a:hover {
-  transition: all ease 0.3s;
-  color: #ffffff;
-  background: #000;
-}
-
-#links a:nth-child(3) {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-}
-
-#links a:nth-child(1) {
-  border-right: 2px solid black;
-}
-
-#page1 h1 {
-  width: 50%;
-  text-transform: uppercase;
-  font-size: 5.3vw;
-  font-weight: 750;
-  /* letter-spacing: -3px; */
-  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px 1px 0 #000000,
-    -1px 1px 0 #000000, 1px -1px 0 #000000, 1px -1px 0 #000000;
-  line-height: 1.2;
-  color: rgb(255, 255, 255);
-  position: relative;
-  left: 4%;
-  margin: 45px 0px;
-}
-
-#page1 h2 {
-  color: white;
-  font-size: 1.6vw;
-  position: relative;
-  left: 4%;
-  font-weight: 750;
-  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px 1px 0 #000000,
-    -1px 1px 0 #000000, 1px -1px 0 #000000, 1px -1px 0 #000000;
-  margin: -3vw 0vw 0vw 0vw;
-}
-
-#firstbut {
-  padding: 20px 40px;
-  /* background-color: rgba(255, 255, 255, 0.758); */
-  position: relative;
-  left: 4%;
-  color: rgb(78, 78, 227);
-  z-index: 99;
-  /* bottom: 5%; */
-  border: none;
-  /* transform: translateX(-50%); */
-  border-radius: 10px;
-  font-family: jost;
-  font-weight: 600;
-  overflow: hidden;
+.menu-icon {
   cursor: pointer;
-  background-color: #03d2ff;
-  /* background-color: red; */
-  margin-top: 20px;
-}
-
-#firstbut > #more {
-  height: 3.5vh;
-  /* background-color: rgb(94, 255, 0); */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  font-size: 1.5rem;
+  color: #000;
   position: relative;
-  overflow: hidden;
+  margin-bottom: 0.5rem;
 }
 
-#firstbut > #more > h3 {
-  transform: translateY(49%);
-  transition: all ease 0.3s;
-  color: rgb(255 255 255);
-  font-size: 1.1vw;
-  font-weight: 600;
-}
-
-#firstbut > #more > h4 {
-  transform: translateY(-155%);
-  transition: all ease 0.3s;
-  color: #03d2ff;
-  font-size: 1.2vw;
-  font-weight: 500;
-}
-
-#firstbut > #firstbutfull {
+.dropdown {
   position: absolute;
+  top: 2rem;
+  left: 0;
+  background-color: #00cfe8;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.dropdown li {
+  margin: 0.5rem 0;
+}
+
+.dropdown li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Donate Button in Top-Left */
+.donate-button {
+  background-color: #FFFF00; /* Bright yellow */
+  color: #000;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Logo in Top-Right */
+.logo-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.logo-container img {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+}
+
+/* -------------------- */
+/* Hero Section Styles  */
+/* -------------------- */
+.hero {
   width: 100%;
-  height: 100%;
-  background-color: rgb(255 255 255);
-  left: 50%;
-  transform: translateX(-50%);
-  top: 100%;
-  transition: all ease 0.3s;
+  min-height: 100vh; /* full viewport height */
+  padding: 3rem;
+  background-color: #87E6F8; /* Exact turquoise background from reference */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-#firstbut:hover #firstbutfull {
-  top: 0;
+.hero-content {
+  max-width: 40%; /* Limit text container to roughly 40% */
+  text-align: left;
 }
 
-#firstbut:hover #more > h3 {
-  transform: translateY(120%);
-  font-weight: 100;
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
 }
 
-#firstbut:hover #more > h4 {
-  transform: translateY(-40%);
-  z-index: 99999;
+.hero-content h1 span {
+  display: block;
 }
 
-#page1 #logoimg {
-  position: absolute;
-  width: 17vw;
-  top: 9vh;
-  right: 95px;
-  padding: 25px 25px 18px 25px;
-  background-color: white;
-  border-radius: 19px;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
 }
 
+.help-button {
+  background-color: #fff;       /* White background */
+  color: #00a8cc;              /* Turquoise text (adjust as needed) */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.help-button:hover {
+  background-color: #f0f0f0; /* Optional hover effect */
+}
+
+.hero-image-container {
+  max-width: 55%; /* Increase the space for the image */
+  text-align: right;
+  margin-left: 2rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+/* -------------------- */
+/* Remaining Section Styles */
+/* (These styles remain largely unchanged) */
+/* -------------------- */
+
+/* Page 2 */
 #page2 {
   width: 100%;
   min-height: 100vh;
@@ -207,7 +169,7 @@ body {
   background-position: center;
   position: relative;
   overflow: hidden;
-  background-color: #ccc; /* fallback color */
+  background-color: #ccc;
 }
 
 #page2 p {
@@ -228,35 +190,17 @@ body {
   color: white;
   display: flex;
   align-items: center;
-  /* top: 0; */
 }
 
-#blur h1 {
-  font-size: 10vw;
-  color: #fbf309;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-/* #blur h3 {
-  position: relative;
-  left: 25%;
-  top: -10vh;
-  width: 70%;
-  font-size: 1.6vw;
-  font-weight: 800;
-  line-height: 1.4;
-} */
-
+/* Page 30 */
 #page30 {
   width: 100%;
   min-height: 40vh;
   position: relative;
   background-color: #03d2ff;
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-size: x-large;
 }
@@ -270,6 +214,7 @@ body {
   width: 100%;
 }
 
+/* Page 31 */
 #page31 {
   width: 100%;
   min-height: 40vh;
@@ -281,7 +226,6 @@ body {
   justify-content: space-between;
   color: white;
   align-items: center;
-  /* justify-content: space-around; */
 }
 
 #page3left {
@@ -304,14 +248,13 @@ body {
 #page3left img {
   display: inline;
   width: 14vw;
-  margin: 14.5vw 0vw 0vw -9vw;
+  margin: 14.5vw 0 0 -9vw;
   height: 11vw;
 }
 
 #page3right {
   width: 80%;
   height: 100%;
-  /* background-color: red; */
   padding: 50px 10px;
   position: relative;
 }
@@ -339,7 +282,7 @@ body {
 
 #page3right h4 {
   width: 75%;
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
 
 #page3right h5 {
@@ -350,6 +293,7 @@ body {
   margin-left: -7px;
 }
 
+/* Page 3 */
 #page3 {
   width: 100%;
   min-height: 100vh;
@@ -362,7 +306,6 @@ body {
 #page3mid {
   width: 100%;
   height: 33vh;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -370,11 +313,9 @@ body {
 }
 
 #page3mid h3 {
-  /* width: 20%; */
   font-size: 2.7vw;
   font-weight: 730;
   text-align: center;
-  /* background-color: red; */
   color: #03d2ff;
   line-height: 1;
 }
@@ -408,7 +349,6 @@ body {
   width: 100%;
   height: 45vh;
   display: flex;
-  /* background-color: red; */
   justify-content: space-between;
   position: relative;
   padding: 0px 20px;
@@ -421,9 +361,7 @@ body {
 .curve {
   width: 28%;
   height: 100%;
-  /* background-color: pink; */
   position: relative;
-  /* border: 1px solid black; */
 }
 
 .ctop {
@@ -435,7 +373,6 @@ body {
   color: black;
   margin-bottom: 20px;
   gap: 30px;
-  /* background-color: gray; */
 }
 
 .ctop img {
@@ -458,8 +395,6 @@ body {
 #page3bot {
   display: flex;
   width: 100%;
-  /* padding: 50px; */
-  /* background-color: red; */
   padding: 0px 50px;
   position: relative;
   bottom: 0;
@@ -472,29 +407,24 @@ body {
   font-size: 9vw;
   font-weight: 800;
   width: 80%;
-  /* background-color: rgb(10, 230, 36); */
-  position: relative;
 }
 
 #page3bot p {
   color: black;
-  line-height: 1;
-  width: 50%;
-  /* background-color: gainsboro; */
-  font-weight: 700;
   line-height: 1.3;
+  width: 50%;
+  font-weight: 700;
   font-size: 1.3vw;
 }
 
+/* Campaign Section */
 #camp {
   display: flex;
   width: 100%;
   position: relative;
   min-height: 32vh;
-  /* top: -5%; */
   padding: 0px 50px;
   background-color: #03d2ff;
-  /* background-color: red; */
 }
 
 #camp h4 {
@@ -505,27 +435,20 @@ body {
   width: 80%;
   position: relative;
   top: -5%;
-  /* background-color: aquamarine; */
-  /* top: -5%; */
-  /* top: 2%; */
-  /* background-color: rgb(198, 12, 12); */
 }
 
 #camp p {
-  /* widows: 50%; */
   color: rgb(255, 255, 255);
-  line-height: 1;
-  width: 50%;
-  /* background-color: gainsboro; */
-  font-weight: 700;
   line-height: 1.3;
+  width: 50%;
+  font-weight: 700;
   font-size: 1.3vw;
   padding-top: 10px;
 }
 
+/* Page 4: Footer */
 #page4 {
   width: 100%;
-  /* height: 100vh; */
   background-color: #3103ff;
   position: relative;
 }
@@ -533,7 +456,6 @@ body {
 #fot {
   width: 100%;
   height: 72vh;
-  /* background-image: url(/images/footer.png); */
   background-size: cover;
 }
 
@@ -582,291 +504,40 @@ body {
   font-size: 2vw;
 }
 
-#hidden-nav {
-  display: none;
-}
-
-/* Hidden navigation container */
-#hidden-nav {
-  position: relative;
-  display: none;
-}
-
-/* Menu button styling */
-#toggle-menu {
-  font-size: 2vh;
-  margin-top: 2vh;
-  padding: 10px 30px;
-  background-color: #03d2ff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/* Links container styling */
-#links-hidden {
-  position: absolute;
-  font-size: larger;
-  top: 100%;
-  left: 0;
-  background-color: #03d2ff;
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-  z-index: 1;
-  display: none;
-  flex-direction: column;
-}
-
-/* Individual link styling */
-#links-hidden a {
-  color: black;
-  text-decoration: none;
-  padding: 10px 20px;
-  display: block;
-}
-
-#links-hidden a:hover {
-  background-color: #ddd;
-}
-
-/* Display links when the menu is toggled */
-#links-hidden.show {
-  display: flex;
-}
-
+/* -------------------- */
+/* Responsive Adjustments */
+/* -------------------- */
 @media (max-width: 1000px) {
-  #page1 {
-    padding: 10px;
-    background-position: center;
-    background-size: cover;
-  }
-  /* Hidden navigation container */
-  #hidden-nav {
-    position: relative;
-    display: inline-block;
-  }
-
-  #nav {
-    display: none;
-    height: 0;
-    padding: 0 10px;
-  }
-
-  #logo {
-    width: 20%;
-    height: 100vh;
-  }
-
-  #links a {
-    padding: 5px 8px;
-    font-size: 3vw;
-  }
-
-  #page1 h1 {
-    width: 85%;
-    font-size: 10vw;
-    font-weight: 800;
-    margin-top: 10%;
-  }
-  #page1 img #logoimg {
-    height: 100vh;
-    margin-top: -100vw;
-  }
-
-  #page1 h2 {
-    font-size: 5vw;
-    font-weight: 750;
-  }
-
-  #firstbut {
-    margin-top: 13%;
-  }
-
-  #firstbut > #more > h3,
-  #firstbut > #more > h4 {
-    font-size: 4vw;
-  }
-
-  #page1 #logoimg {
-    width: 30%;
-    right: 5%;
-  }
-
-  #page2 #blur {
-    padding: 15px 10px;
-    background-color: rgba(3, 209, 255, 0.7);
-  }
-  #page2 h1 {
-    font-size: 16vw;
-    text-align: left;
-  }
-  #page2 p {
-    font-size: 6vw;
-    margin-left: -1vw;
-  }
-  #page31 {
-    padding: 0 10px 0 40px;
-  }
-
-  #page3left {
-    width: 20%;
-  }
-
-  #page3left h1 {
-    font-size: 12vw;
-    margin-left: 9vw;
-  }
-
-  #page3right {
-    width: 80%;
-    padding: 20px 10px;
-    margin-left: 35vw;
-  }
-
-  #page3right h2 {
-    font-size: 4vw;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  #page3right h3 {
-    font-size: 4vw;
-  }
-  #page3right h4 {
-    font-size: 4vw;
-  }
-
-  #page3 {
-    min-height: 150vh;
-  }
-
-  #page3mid {
+  .hero {
     flex-direction: column;
-    padding: 20px 30px;
+    padding: 2rem;
   }
-
-  #page3mid h3 {
-    font-size: 7vw;
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
   }
-
-  #page3mid h3 span {
-    font-size: 7vw;
+  .hero-image-container {
+    margin: 2rem 0 0 0;
   }
-
-  #page3curve {
-    padding: 50px 20px;
-    padding-bottom: 10vh;
-    min-height: 90vh;
-    border-top-right-radius: 170px;
-    border-bottom-right-radius: 170px;
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
-
-  #page3curve h1 {
-    font-size: 15vw;
+  .hero-content p {
+    font-size: 1rem;
   }
-
-  #page3curve .box {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    margin-top: 1vw;
+  .help-button {
+    font-size: 0.9rem;
   }
-  #page3curve #box2.box {
-    margin-top: 5vh;
-  }
-  .curve {
-    width: 80%;
-  }
-  .curve #curve4 {
-    width: 80%;
-    margin-top: 10vh;
-    padding-top: 10vh;
-  }
-
-  .ctop img {
-    width: 17vw;
-  }
-
-  .ctop h2 {
-    font-size: 4vw;
-  }
-
-  .curve h3 {
-    font-size: 4vw;
-  }
-
-  #page3bot {
-    padding: 0 10px;
-  }
-
-  #page3bot h4 {
-    font-size: 8vw;
-    padding-top: 10px;
-    line-height: 1.1;
-  }
-
-  #page3bot p {
-    width: 65%;
-    font-size: 3.2vw;
-  }
-
-  #camp {
-    min-height: 20vh;
-    padding: 0 10px;
-  }
-
-  #camp h4 {
-    font-size: 8vw;
-    top: 3%;
-  }
-
-  #camp p {
-    width: 65%;
-    font-size: 3.3vw;
-  }
-
-  #fot {
-    height: 35vh;
-  }
-
-  #page4bot {
-    height: 25vh;
-  }
-
-  #page4bot h1 {
-    font-size: 6vw;
-  }
-
-  #line {
-    width: 30%;
-    border-top: 2px solid black;
-  }
-
-  #social i {
-    font-size: 5vw;
+  .hero-header {
+    padding: 0.5rem;
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .about-info-box {
-    font-size: 5vw;
-    padding: 5px;
-    text-align: center;
+@media only screen and (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
   }
-
-  .about-right-description {
-    width: 100%;
-    font-size: 5vw;
-    text-align: center;
-  }
-
-  .about-us-title {
-    text-align: center;
-    font-size: 9vw;
-  }
-
-  .about-us-section {
-    flex-direction: column;
-    padding: 20px;
+  .help-button {
+    font-size: 0.8rem;
   }
 }

@@ -1,0 +1,543 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+#main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* -------------------- */
+/* Top Navigation Styles */
+/* -------------------- */
+.hero-header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 110;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+.top-left-menu {
+  display: flex;
+  flex-direction: column; /* stack dots and Donate button vertically */
+  align-items: flex-start;
+  position: relative;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #000;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  background-color: #00cfe8;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.dropdown li {
+  margin: 0.5rem 0;
+}
+
+.dropdown li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Donate Button in Top-Left */
+.donate-button {
+  background-color: #FFFF00; /* Bright yellow */
+  color: #000;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Logo in Top-Right */
+.logo-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.logo-container img {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+}
+
+/* -------------------- */
+/* Hero Section Styles  */
+/* -------------------- */
+.hero {
+  width: 100%;
+  min-height: 100vh; /* full viewport height */
+  padding: 3rem;
+  background-color: #87E6F8; /* Exact turquoise background from reference */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 40%; /* Limit text container to roughly 40% */
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.hero-content h1 span {
+  display: block;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.help-button {
+  background-color: #fff;       /* White background */
+  color: #00a8cc;              /* Turquoise text (adjust as needed) */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.help-button:hover {
+  background-color: #f0f0f0; /* Optional hover effect */
+}
+
+.hero-image-container {
+  max-width: 55%; /* Increase the space for the image */
+  text-align: right;
+  margin-left: 2rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+/* -------------------- */
+/* Remaining Section Styles */
+/* (These styles remain largely unchanged) */
+/* -------------------- */
+
+/* Page 2 */
+#page2 {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(/images/page2.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+#page2 p {
+  font-size: 2vw;
+  margin-left: 15vw;
+}
+
+.about-info-box p {
+  margin-top: -10vh;
+}
+
+#page2 #blur {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #03d1ff86;
+  padding: 15px 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* Page 30 */
+#page30 {
+  width: 100%;
+  min-height: 40vh;
+  position: relative;
+  background-color: #03d2ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: x-large;
+}
+
+#page30 h1 {
+  font-size: 100px;
+  padding-bottom: 10px;
+}
+
+#page30 img {
+  width: 100%;
+}
+
+/* Page 31 */
+#page31 {
+  width: 100%;
+  min-height: 40vh;
+  position: relative;
+  background-color: #03d2ff;
+  display: flex;
+  padding: 0px 20px;
+  padding-left: 150px;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
+#page3left {
+  margin: -50px;
+  width: 0%;
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+#page3left h1 {
+  font-size: 9vw;
+  font-weight: 900;
+  line-height: 1;
+}
+
+#page3left img {
+  display: inline;
+  width: 14vw;
+  margin: 14.5vw 0 0 -9vw;
+  height: 11vw;
+}
+
+#page3right {
+  width: 80%;
+  height: 100%;
+  padding: 50px 10px;
+  position: relative;
+}
+
+#page3right a {
+  text-decoration: none;
+}
+
+#page3right h2 {
+  display: inline;
+  padding: 10px 50px;
+  font-size: 2.4vw;
+  font-weight: 750;
+  background-color: white;
+  color: #03d2ff;
+  border-radius: 10px;
+  margin-right: 30px;
+  position: relative;
+}
+
+#page3right h3 {
+  width: 75%;
+  font-size: 2vw;
+}
+
+#page3right h4 {
+  width: 75%;
+  font-size: 2vw;
+}
+
+#page3right h5 {
+  width: 75%;
+  font-size: 10vw;
+  text-align: left;
+  color: #fbf309;
+  margin-left: -7px;
+}
+
+/* Page 3 */
+#page3 {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #fbf309;
+  color: white;
+  overflow: hidden;
+}
+
+#page3mid {
+  width: 100%;
+  height: 33vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+
+#page3mid h3 {
+  font-size: 2.7vw;
+  font-weight: 730;
+  text-align: center;
+  color: #03d2ff;
+  line-height: 1;
+}
+
+#page3mid h3 span {
+  font-size: 5.5vw;
+  font-weight: 750;
+}
+
+#page3curve {
+  width: 100%;
+  min-height: 200vh;
+  background-color: #03d2ff;
+  border-top-right-radius: 350px;
+  border-bottom-right-radius: 350px;
+  padding: 50px 70px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#page3curve h1 {
+  text-transform: uppercase;
+  font-size: 10vw;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 50px;
+  color: rgb(255, 255, 255);
+}
+
+#page3curve .box {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0px 20px;
+}
+
+#page3curve #box1 {
+  margin-bottom: 40px;
+}
+
+.curve {
+  width: 28%;
+  height: 100%;
+  position: relative;
+}
+
+.ctop {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  color: black;
+  margin-bottom: 20px;
+  gap: 30px;
+}
+
+.ctop img {
+  width: 7vw;
+}
+
+.ctop h2 {
+  font-size: 2.1vw;
+  font-weight: 700;
+}
+
+.curve h3 {
+  font-size: 1.5vw;
+}
+
+#icon6 {
+  width: 8vw;
+}
+
+#page3bot {
+  display: flex;
+  width: 100%;
+  padding: 0px 50px;
+  position: relative;
+  bottom: 0;
+  align-items: end;
+}
+
+#page3bot h4 {
+  text-transform: uppercase;
+  color: #03d2ff;
+  font-size: 9vw;
+  font-weight: 800;
+  width: 80%;
+}
+
+#page3bot p {
+  color: black;
+  line-height: 1.3;
+  width: 50%;
+  font-weight: 700;
+  font-size: 1.3vw;
+}
+
+/* Campaign Section */
+#camp {
+  display: flex;
+  width: 100%;
+  position: relative;
+  min-height: 32vh;
+  padding: 0px 50px;
+  background-color: #03d2ff;
+}
+
+#camp h4 {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 9vw;
+  font-weight: 800;
+  width: 80%;
+  position: relative;
+  top: -5%;
+}
+
+#camp p {
+  color: rgb(255, 255, 255);
+  line-height: 1.3;
+  width: 50%;
+  font-weight: 700;
+  font-size: 1.3vw;
+  padding-top: 10px;
+}
+
+/* Page 4: Footer */
+#page4 {
+  width: 100%;
+  background-color: #3103ff;
+  position: relative;
+}
+
+#fot {
+  width: 100%;
+  height: 72vh;
+  background-size: cover;
+}
+
+#fot img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#page4bot {
+  width: 100%;
+  min-height: 28vh;
+  background-color: #fbf309;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#page4bot h1 {
+  font-size: 3.6vw;
+  font-weight: 600;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+  word-spacing: 7px;
+}
+
+#line {
+  width: 10vw;
+  border-top: 2px solid black;
+}
+
+#social {
+  display: flex;
+  gap: 15px;
+}
+
+#social a {
+  text-decoration: none;
+  color: black;
+}
+
+#social i {
+  font-size: 2vw;
+}
+
+/* -------------------- */
+/* Responsive Adjustments */
+/* -------------------- */
+@media (max-width: 1000px) {
+  .hero {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-image-container {
+    margin: 2rem 0 0 0;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .help-button {
+    font-size: 0.9rem;
+  }
+  .hero-header {
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .help-button {
+    font-size: 0.8rem;
+  }
+}
